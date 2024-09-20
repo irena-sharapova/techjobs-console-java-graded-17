@@ -3,6 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+
 /**
  * Created by LaunchCode
  */
@@ -119,20 +120,24 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-
-        for ( int i = 0; i< someJobs.size(); i++ ) {
-                //System.out.println(someJobs.get(i)) ;
-                System.out.println("\n*****");
-
-                HashMap<String, String> allMap =someJobs.get(i);
-                for (Map.Entry<String, String> entry : allMap.entrySet()) {
-
-                    System.out.println(entry.getKey() + ": " + entry.getValue());
-
-                }
-                System.out.println("*****");
-                }
-
+        boolean emptyArraySomeJobs = someJobs.isEmpty();
+        if (emptyArraySomeJobs == true) {
+            System.out.print("No Results");
         }
+
+
+        for ( int i = 0; i < someJobs.size(); i++ ) {
+            //System.out.println(someJobs.get(i)) ;
+            System.out.println("\n*****");
+
+            HashMap<String, String> allMap = someJobs.get(i);
+            for (Map.Entry<String, String> entry : allMap.entrySet()) {
+                System.out.println(entry.getKey() + ": " + entry.getValue());
+            }
+            System.out.println("*****");
+        }
+
+
     }
+}
 
